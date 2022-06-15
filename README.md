@@ -1,12 +1,14 @@
+# CENet
+> Pytorch implementation for codes in "Cross-modal Enhancement Network for Multimodal Sentiment Analysis (TMM 2022)"
 # Prepare
-
 ## Dataset
-Put MOSI or MOSEI dataset under the dataset directory.
+Download the MOSI pkl file([https](https://drive.google.com/drive/folders/1_u1Vt0_4g0RLoQbdslBwAdMslEdW1avI?usp=sharing)). Put it under the ./dataset directory.
 
 ## Pre-trained language model
-Downloading the SentiLARE language model files(https://drive.google.com/drive/folders/1u1YxwPGMcNDOmdnelPwBKYaBk-FY4jp1), and then putting them into the ./pretrained-model/sentilare_model directory.
+Download the SentiLARE language model files (https://drive.google.com/drive/folders/1u1YxwPGMcNDOmdnelPwBKYaBk-FY4jp1), and then put them into the ./pretrained-model/sentilare_model directory.
 
 # Run
 '''
 python train_CASNet.py
 '''
+Note: the scale of MOSI dataset is small, so the training process is not stable. To get results close to those in CENet paper, you can set the seed in args to 6758.
