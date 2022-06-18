@@ -10,7 +10,7 @@ from io import open
 import torch
 from torch import nn
 from torch.nn import CrossEntropyLoss, MSELoss, BCELoss
-from networks.subnet.CASmodule import CAS
+from networks.subnet.CEmodule import CE
 from pytorch_transformers import BertConfig
 from pytorch_transformers.modeling_utils import PreTrainedModel, prune_linear_layer
 from pytorch_transformers import BERT_PRETRAINED_MODEL_ARCHIVE_MAP
@@ -321,7 +321,7 @@ class BertEncoder(nn.Module):
         self.output_attentions = config.output_attentions
         self.output_hidden_states = config.output_hidden_states
         self.layer = nn.ModuleList([BertLayer(config) for _ in range(config.num_hidden_layers)])
-        self.CAS = CAS()
+        self.CE = CE()
 
     def forward(self, hidden_states, visual=None, acoustic=None, visual_ids=None, acoustic_ids=None, attention_mask=None, head_mask=None):
         all_hidden_states = ()
@@ -331,7 +331,7 @@ class BertEncoder(nn.Module):
                 all_hidden_states = all_hidden_states + (hidden_states,)
 
             if i == ROBERTA_INJECTION_INDEX:
-                hidden_states = self.CAS(hidden_states, visual=visual, acoustic=acoustic, visual_ids=visual_ids, acoustic_ids=acoustic_ids)
+                hidden_states = self.CE(hidden_states, visual=visual, acoustic=acoustic, visual_ids=visual_ids, acoustic_ids=acoustic_ids)
 
             layer_outputs = layer_module(hidden_states, attention_mask, head_mask[i])
             hidden_states = layer_outputs[0]
