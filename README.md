@@ -13,3 +13,18 @@ python train.py
 '''
 
 Note: the scale of MOSI dataset is small, so the training process is not stable. To get results close to those in CENet paper, you can set the seed in args to 6758.
+
+# Paper
+
+Please cite our paper if you find our work useful for your research:
+
+```
+@ARTICLE{9797846,  
+  author={Wang, Di and Liu, Shuai and Wang, Quan and Tian, Yumin and He, Lihuo and Gao, Xinbo},  
+  journal={IEEE Transactions on Multimedia},   
+  title={Cross-modal Enhancement Network for Multimodal Sentiment Analysis},   
+  year={2022},    
+  pages={1-13},  
+  doi={10.1109/TMM.2022.3183830}
+}
+```
