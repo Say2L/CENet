@@ -5,7 +5,7 @@
 Download the MOSI pkl file (https://drive.google.com/drive/folders/1_u1Vt0_4g0RLoQbdslBwAdMslEdW1avI?usp=sharing). Put it under the "./dataset" directory.
 
 ## Pre-trained language model
-Download the SentiLARE language model files (https://drive.google.com/drive/folders/1u1YxwPGMcNDOmdnelPwBKYaBk-FY4jp1), and then put them into the "./pretrained-model/sentilare_model" directory.
+Download the SentiLARE language model files (https://drive.google.com/file/d/1onz0ds0CchBRFcSc_AkTLH_AZX_iNTjO/view?usp=share_link), and then put them into the "./pretrained-model/sentilare_model" directory.
 
 # Run
 '''
